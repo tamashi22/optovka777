@@ -1,0 +1,35 @@
+.container {
+  background: #ffffff;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .linkTap {
+    position: relative;
+    // svg {
+    //   path {
+    //     fill: blue;
+    //   }
+    // }
+  }
+}
+.count {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  background: $LIGHT_BLUE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  right: -10px;
+  top: -10px;
+  @extend .medium-14;
+}

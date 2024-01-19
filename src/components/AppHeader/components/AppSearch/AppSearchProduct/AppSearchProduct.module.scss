@@ -1,0 +1,22 @@
+.wrapper {
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    &:hover {
+      background-color: $PRIMARY_GREY;
+      border-radius: 24px;
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      path {
+        fill: $TITLE_ACTIVE_5;
+      }
+    }
+    .text {
+      @extend .medium-14;
+    }
+  }
+}

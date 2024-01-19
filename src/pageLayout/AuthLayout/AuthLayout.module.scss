@@ -1,0 +1,46 @@
+.title {
+  @extend .bold-40;
+  @media screen and (max-width: $TABLET_SIZE) {
+    font-size: 32px;
+  }
+  @media screen and (max-width: $MOBILE_SIZE) {
+    font-size: 24px;
+  }
+}
+.input {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.wrapper {
+  margin-top: 32px;
+  display: flex;
+  .checkBox {
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  span {
+    margin-left: 10px;
+    @extend .bold-14;
+    a {
+      color: $PRIMARY_BLUE;
+      text-decoration: underline;
+    }
+  }
+}
+.count {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 24px;
+  @extend .medium-16;
+  color: $TITLE_ACTIVE_5;
+}
+.resendCodeButton {
+  border: 0;
+  background: none;
+  color: $PRIMARY_BLUE;
+  @extend .medium-16;
+  cursor: pointer;
+}

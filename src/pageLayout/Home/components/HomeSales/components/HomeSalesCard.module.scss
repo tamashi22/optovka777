@@ -1,0 +1,42 @@
+.container {
+  border-radius: 28px;
+  background-color: $PRIMARY_GREY;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-right: 12px;
+  gap: 30px;
+  max-width: 415px;
+  @media screen and (max-width: $TABLET_SIZE) {
+    max-width: none;
+    width: 100%;
+  }
+  .textWrapper {
+    .salesText {
+      margin-bottom: 15px;
+      @extend .medium-18;
+    }
+    .salesButton {
+      width: 116px;
+      color: $LIGHT_BLUE;
+      border: 0;
+      background: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @extend .bold-24;
+      cursor: pointer;
+      &:hover {
+        color: $PRIMARY_BLUE;
+      }
+    }
+  }
+  .imageWrapper {
+    width: 132px;
+    height: 141px;
+    padding: 12px 0;
+    border-radius: 16px;
+    background-color: white;
+  }
+}

@@ -1,0 +1,37 @@
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  .container {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    .icon {
+      position: absolute;
+      margin-left: 20px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .input {
+      @extend .medium-16;
+      border-radius: 100px;
+      background: $PRIMARY_GREY;
+      border: 1px solid white;
+      width: 100%;
+      padding: 12px 20px;
+      outline: none;
+      &::placeholder {
+        color: $TITLE_ACTIVE_5;
+      }
+      &:hover {
+        border: 1px solid $PRIMARY_BLUE;
+      }
+      &:focus {
+        border: 1px solid $PRIMARY_BLUE;
+      }
+    }
+    .iconSpace {
+      padding-left: 52px;
+    }
+  }
+}

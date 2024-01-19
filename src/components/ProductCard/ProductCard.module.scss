@@ -1,0 +1,147 @@
+.container {
+  width: 304px;
+  height: 508px;
+  background-color: $PRIMARY_GREY;
+  border-radius: 28px;
+  padding: 24px;
+  display: flex;
+  flex-flow: column;
+  @media screen and (max-width: $TABLET_SIZE) {
+    width: 304px;
+    height: 508px;
+    padding: 20px;
+  }
+  @media screen and (max-width: $MOBILE_SIZE) {
+    padding: 12px;
+    width: 200px;
+    height: 300px;
+  }
+  .photo {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      border-radius: 16px;
+      @media screen and (max-width: $TABLET_SIZE) {
+        border-radius: 14px;
+      }
+    }
+  }
+  .content {
+    flex-grow: 1;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .textWrapper {
+      .title {
+        @extend .bold-24;
+        @media screen and (max-width: $MOBILE_SIZE) {
+          font-size: 16px;
+        }
+      }
+      .tag {
+        border-radius: 100px;
+        background: #fff;
+        padding: 4px 16px;
+        width: fit-content;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        @media screen and (max-width: $MOBILE_SIZE) {
+          padding: 2px 8px;
+          margin: 8px;
+        }
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        .statusYes {
+          margin-left: 8px;
+          color: $LIGHT_GREEN;
+          @extend .medium-16;
+        }
+        .statusNo {
+          color: $PRIMARY_RED;
+          @extend .medium-16;
+        }
+      }
+    }
+  }
+}
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .price {
+    @extend .bold-32;
+    @media screen and (max-width: $MOBILE_SIZE) {
+      font-size: 20px;
+    }
+  }
+  .cardButton {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    background: $LIGHT_BLUE;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: $PRIMARY_BLUE;
+    }
+    @media screen and (max-width: $MOBILE_SIZE) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  .cardButtonActve {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid $LIGHT_BLUE;
+    border-radius: 10px;
+    cursor: pointer;
+    @media screen and (max-width: $MOBILE_SIZE) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+
+.favouriteButton {
+  cursor: pointer;
+  position: absolute;
+  background-color: $DARK_GREY;
+  width: 48px;
+  height: 48px;
+  border-radius: 100px;
+  z-index: 99;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 5%;
+  right: 5%;
+  @media screen and (max-width: $TABLET_SIZE) {
+    width: 40px;
+    height: 40px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.activeFavourite {
+  background-color: #ffffff;
+  border: 1px solid $PRIMARY_GREY;
+}

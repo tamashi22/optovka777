@@ -1,0 +1,62 @@
+.wrapper {
+  position: relative;
+  margin-top: 50px;
+  .container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      @extend .bold-36;
+      @media screen and (max-width: $TABLET_SIZE) {
+        font-size: 32px;
+      }
+      @media screen and (max-width: $MOBILE_SIZE) {
+        font-size: 24px;
+      }
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      span {
+        @extend .bold-20;
+        color: $LIGHT_BLUE;
+        margin-right: 2px;
+        @media screen and (max-width: $MOBILE_SIZE) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.swiperSlide {
+  width: auto;
+}
+.arrowButton {
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  color: $TITLE_ACTIVE_13;
+  border: 0;
+  position: absolute;
+  top: calc(50% - 24px);
+  z-index: 1000;
+  border-radius: 50%;
+  cursor: pointer;
+  svg {
+    width: 40px;
+    height: 40px;
+    path {
+      fill: #000000;
+    }
+  }
+}
+.next {
+  right: -24px;
+}
+.prev {
+  left: -24px;
+  transform: rotate(180deg);
+}

@@ -1,0 +1,50 @@
+.container {
+  height: 557px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  background: $LIGHT_BLUE;
+  border-radius: 40px;
+  padding: 20px;
+  @media screen and (max-width: $TABLET_SIZE) {
+    height: 480px;
+  }
+  @media screen and (max-width: $MOBILE_SIZE) {
+    height: 320px;
+  }
+  .title {
+    max-width: 800px;
+    font-size: 56px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    @media screen and (max-width: $TABLET_SIZE) {
+      font-size: 46px;
+    }
+    @media screen and (max-width: $MOBILE_SIZE) {
+      font-size: 26px;
+    }
+  }
+  .time {
+    @extend .medium-18;
+    color: #ffffff;
+    margin: 30px 0;
+  }
+  .button {
+    cursor: pointer;
+    @extend .medium-18;
+    font-weight: 500;
+    border-radius: 10px;
+    width: 192px;
+    height: 62px;
+    border: 0;
+    background: #ffffff;
+    @media screen and (max-width: $MOBILE_SIZE) {
+      width: 162px;
+      height: 42px;
+    }
+  }
+}

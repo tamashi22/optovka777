@@ -1,0 +1,72 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e1e4;
+  padding: 20px 0;
+  @media screen and (max-width: $TABLET_SIZE) {
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media screen and (max-width: $MOBILE_SIZE) {
+  }
+  .leftContainer {
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: $TABLET_SIZE) {
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      width: 190px;
+    }
+    .text18 {
+      @extend .medium-18;
+      margin: 32px 0;
+    }
+    span {
+      @extend .medium-16;
+    }
+  }
+  .rightContainer {
+    display: flex;
+    @media screen and (max-width: $TABLET_SIZE) {
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .item {
+      &:first-child {
+        margin-right: 100px;
+      }
+      .title {
+        @extend .bold-24;
+      }
+      .linksWrapper {
+        list-style-type: none;
+        .link {
+          margin-top: 20px;
+          @extend .regular-16;
+          display: flex;
+          align-items: center;
+          @media screen and (max-width: $MOBILE_SIZE) {
+            font-size: 12px;
+          }
+        }
+        .icon {
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+.container {
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+  @media screen and (max-width: $TABLET_SIZE) {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+}

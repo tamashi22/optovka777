@@ -1,0 +1,21 @@
+.button {
+  margin-top: 16px;
+  cursor: pointer;
+  width: 189px;
+  height: 44px;
+  color: #ffffff;
+  border: 0;
+  background: $LIGHT_BLUE;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @extend .medium-16;
+  &:hover {
+    background: $PRIMARY_BLUE;
+  }
+  svg {
+    width: fit-content !important;
+    margin-left: 10px;
+  }
+}

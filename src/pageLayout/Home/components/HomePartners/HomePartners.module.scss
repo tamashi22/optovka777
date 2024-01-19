@@ -1,0 +1,67 @@
+.title {
+  @extend .bold-40;
+  margin-bottom: 20px;
+  @media screen and (max-width: $MOBILE_SIZE) {
+    font-size: 24px;
+  }
+}
+.wrapper {
+  position: relative;
+
+  .item {
+    width: 305px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $PRIMARY_GREY;
+    border-radius: 20px;
+
+    padding: 10px;
+    @media screen and (max-width: $MOBILE_SIZE) {
+      width: 167px;
+      height: 137px;
+    }
+    .image {
+      position: relative;
+      @media screen and (max-width: $MOBILE_SIZE) {
+        width: 132.505px;
+        height: 133.167px;
+        span {
+          position: static !important;
+        }
+      }
+    }
+  }
+}
+.swiperSlide {
+  width: auto;
+}
+.arrowButton {
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  color: $TITLE_ACTIVE_13;
+  border: 0;
+  position: absolute;
+  top: calc(50% - 24px);
+  z-index: 1000;
+  border-radius: 50%;
+  cursor: pointer;
+  svg {
+    width: 40px;
+    height: 40px;
+    path {
+      fill: #000000;
+    }
+  }
+}
+.next {
+  right: -20px;
+}
+.prev {
+  left: -20px;
+  transform: rotate(180deg);
+}

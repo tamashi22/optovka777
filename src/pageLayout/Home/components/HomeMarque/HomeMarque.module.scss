@@ -1,0 +1,30 @@
+.container {
+  margin: 30px 0px;
+  .item {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    span {
+      margin-left: 15px;
+      font-size: 80px;
+      font-weight: 500;
+      color: $DARK_GREY;
+      @media screen and (max-width: $TABLET_SIZE) {
+        font-size: 64px;
+      }
+      @media screen and (max-width: $MOBILE_SIZE) {
+        font-size: 40px;
+      }
+    }
+    svg {
+      @media screen and (max-width: $TABLET_SIZE) {
+        width: 64px;
+        height: 64px;
+      }
+      @media screen and (max-width: $MOBILE_SIZE) {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+}

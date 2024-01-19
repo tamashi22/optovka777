@@ -1,0 +1,9 @@
+.container {
+  margin-top: 50px;
+  .swiperSlide {
+    width: auto;
+    @media screen and (max-width: $TABLET_SIZE) {
+      width: 100%;
+    }
+  }
+}

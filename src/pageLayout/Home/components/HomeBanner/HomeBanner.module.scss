@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+}
+.banners {
+  border-radius: 40px;
+  overflow: hidden;
+
+  .banner {
+    width: 100%;
+    height: auto;
+  }
+}
+.buttonWrapper {
+  position: absolute;
+  z-index: 100;
+  bottom: 10%;
+  right: 7%;
+  display: flex;
+  gap: 20px;
+  .arrowButton {
+    display: flex;
+    border: 0;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1000px;
+    background-color: $DARK_GREY;
+    @media screen and (max-width: $MOBILE_SIZE) {
+      width: 36px;
+      height: 36px;
+      background: rgba(23, 23, 23, 0.5);
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .next {
+    transform: rotate(180deg);
+  }
+}
+.swiperPagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+
+  .paginationContainer {
+    display: flex;
+    gap: 5px;
+    height: 20px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 100px;
+    background-color: $DARK_GREY;
+    .swiperPaginationBullet {
+      width: 8px;
+      height: 8px;
+      background-color: $PRIMARY_GREY;
+      border-radius: 50%;
+    }
+    .swiperPaginationBulletActive {
+      background: white;
+    }
+  }
+}

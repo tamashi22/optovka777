@@ -5,6 +5,7 @@ import { AppBreadCrumb } from '@/components/AppBreadCrumb';
 
 import { store } from '@/store';
 import styles from './ProductLayout.module.scss';
+import { ProductCarousel } from './components/ProductCarousel';
 
 const ProductLayout = observer(() => {
   const { devicesStore } = store;
@@ -25,7 +26,11 @@ const ProductLayout = observer(() => {
   return (
     <div className="container">
       {!devicesStore.isMobile && <AppBreadCrumb items={crumbItems} />}
-      <div className={styles.wrapper}>gr</div>
+      <div className={styles.wrapper}>
+        <div className={styles.container}>
+          <ProductCarousel />
+        </div>
+      </div>
     </div>
   );
 });

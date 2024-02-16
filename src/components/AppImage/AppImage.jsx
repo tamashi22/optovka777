@@ -11,6 +11,6 @@ export const AppImage = ({ src, alt }) => {
   return src && !error ? (
     <Image fill onError={onError} src={src} alt={alt} />
   ) : (
-    <div className={styles.noPhoto}>no</div>
+    <div className={styles.noPhoto}>no Photo</div>
   );
 };

@@ -11,14 +11,14 @@ export const AppBreadCrumb = ({ items }) => {
         const isLastItem = i === items.length - 1;
         if (!isLastItem) {
           return (
-            <>
-              <Link href={crumb.path} key={i} className={styles.link}>
+            <div className={styles.item} key={i}>
+              <Link href={crumb.path} className={styles.link}>
                 {crumb.label}
               </Link>
               <span className={styles.seporator}>
                 <NextIcon />
               </span>
-            </>
+            </div>
           );
         } else {
           return (

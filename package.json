@@ -15,11 +15,11 @@
     "mobx": "^6.12.0",
     "mobx-react-lite": "^4.0.5",
     "next": "14.0.3",
-    "node-sass": "^9.0.0",
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.2",
     "react-input-mask": "^2.0.4",
+    "sass": "^1.71.0",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
@@ -29,7 +29,6 @@
     "eslint-config-next": "14.0.3",
     "eslint-config-prettier": "^9.0.0",
     "prettier": "^3.1.0",
-    "sass": "^1.69.5",
     "sharp": "^0.33.1"
   }
 }

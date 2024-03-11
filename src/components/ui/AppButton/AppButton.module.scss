@@ -1,5 +1,5 @@
 .app-button {
-  @extend .medium-18;
+  font-size: 18px;
   border: 0;
   outline: none;
   height: 50px;
@@ -12,33 +12,16 @@
   &__full {
     width: 100%;
   }
-  // &--red {
-  //   background: $PRIMARY_RED;
-  // }
-
-  // &--green {
-  //   background: $PRIMARY_GREEN;
-  // }
-  // &--gray {
-  //   background: $TITLE_ACTIVE_11;
-  //   color: $TITLE_ACTIVE_1;
-  // }
   &--blue {
-    background: $LIGHT_BLUE;
+    background: lightblue;
     &:hover {
-      background: $PRIMARY_BLUE;
+      background: lightseagreen;
     }
   }
   &--disabled {
     &__opacity {
       &:disabled {
         opacity: 0.5;
-      }
-    }
-    &__color {
-      &:disabled {
-        background-color: $TITLE_ACTIVE_10;
-        color: $TITLE_ACTIVE_5;
       }
     }
   }

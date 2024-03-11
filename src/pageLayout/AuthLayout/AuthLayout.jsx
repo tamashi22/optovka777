@@ -13,6 +13,7 @@ const AuthLayout = () => {
     formattedPhone: '',
     isValid: false,
   });
+
   const [checked, setChecked] = React.useState(false);
   const [code, setCode] = React.useState('');
   const [minutes, setMinutes] = React.useState(1);

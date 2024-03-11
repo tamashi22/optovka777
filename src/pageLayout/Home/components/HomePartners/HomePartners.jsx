@@ -23,43 +23,42 @@ const HomePartners = () => {
   }, [swiper]);
   return (
     <>
-    <h3 className={styles.title}>Наши надежные партнеры</h3>
-    <div className={styles.wrapper}>
-    
-      <Swiper
-        modules={[Controller, Autoplay, Pagination]}
-        className={styles.swiper}
-        onSwiper={setSwiper}
-        slidesPerView="auto"
-        spaceBetween={15}
-      >
-        {new Array(6).fill(0).map((item, index) => (
-          <SwiperSlide key={index} className={styles.swiperSlide}>
-            <div className={styles.item}>
-              <div className={styles.image}>
-                <Image src={Partner1} alt="parner" objectFit="contain" />
+      <h3 className={styles.title}>Наши надежные партнеры</h3>
+      <div className={styles.wrapper}>
+        <Swiper
+          modules={[Controller, Autoplay, Pagination]}
+          className={styles.swiper}
+          onSwiper={setSwiper}
+          slidesPerView="auto"
+          spaceBetween={15}
+        >
+          {new Array(6).fill(0).map((item, index) => (
+            <SwiperSlide key={index} className={styles.swiperSlide}>
+              <div className={styles.item}>
+                <div className={styles.image}>
+                  <Image src={Partner1} alt="parner" objectFit="contain" />
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      {!isAtEnd && (
-        <button
-          className={clsx(styles.arrowButton, styles.next)}
-          onClick={() => swiper?.slideNext()}
-        >
-          <Arrow />
-        </button>
-      )}
-      {!isAtStart && (
-        <button
-          className={clsx(styles.arrowButton, styles.prev)}
-          onClick={() => swiper?.slidePrev()}
-        >
-          <Arrow />
-        </button>
-      )}
-    </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        {!isAtEnd && (
+          <button
+            className={clsx(styles.arrowButton, styles.next)}
+            onClick={() => swiper?.slideNext()}
+          >
+            <Arrow />
+          </button>
+        )}
+        {!isAtStart && (
+          <button
+            className={clsx(styles.arrowButton, styles.prev)}
+            onClick={() => swiper?.slidePrev()}
+          >
+            <Arrow />
+          </button>
+        )}
+      </div>
     </>
   );
 };

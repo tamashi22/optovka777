@@ -13,6 +13,7 @@ const AuthLayout = () => {
     formattedPhone: '',
     isValid: false,
   });
+
   const [checked, setChecked] = React.useState(false);
   const [code, setCode] = React.useState('');
   const [minutes, setMinutes] = React.useState(1);
@@ -97,7 +98,7 @@ const AuthLayout = () => {
           <div className={styles.count}>
             {seconds > 0 || minutes > 0 ? (
               <p>
-                Запросить код повторно через{' '}
+                Запросить код повторно через
                 {minutes < 10 ? `0${minutes}` : minutes}:
                 {seconds < 10 ? `0${seconds}` : seconds}
               </p>

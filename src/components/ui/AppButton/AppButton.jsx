@@ -20,7 +20,7 @@ export const AppButton = ({
         fullWidth ? styles['app-button__full'] : '',
         className,
       )}
-    > 
+    >
       {children}
     </button>
   );

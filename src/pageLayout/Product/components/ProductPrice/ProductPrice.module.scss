@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 32px;
+  border-radius: 20px;
+}
+.price {
+  @extend .bold-32;
+}
+.button {
+  width: auto;
+  padding: 0px 20px;
+  display: flex;
+  gap: 12px;
+  @extend .medium-16;
+}

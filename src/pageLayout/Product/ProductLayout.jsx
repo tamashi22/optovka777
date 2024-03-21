@@ -6,7 +6,7 @@ import { AppBreadCrumb } from '@/components/AppBreadCrumb';
 import { store } from '@/store';
 import styles from './ProductLayout.module.scss';
 import { ProductCarousel } from './components/ProductCarousel';
-
+import { ProductDetails } from './components/ProductDetails';
 const ProductLayout = observer(() => {
   const { devicesStore } = store;
   const crumbItems = [
@@ -29,6 +29,7 @@ const ProductLayout = observer(() => {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <ProductCarousel />
+          <ProductDetails />
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: ['./src'],
     prependData: `
-    @import "~@/styles/common/temp.scss";`,
+      @import "~@/styles/common/temp.scss";`,
   },
   webpack(config) {
     config.module.rules.push({

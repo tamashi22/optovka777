@@ -1,6 +1,79 @@
+.wrapper {
+  width: 490px;
+}
 .mainImage {
   width: 490px;
   height: 490px;
   border-radius: 24px;
-  overflow: hidden;
+  background-color: #ffffff;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  .imageContainer {
+    width: 447px;
+    height: 324px;
+    position: relative;
+  }
+}
+.carousel {
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .swiperSlide {
+    width: auto;
+  }
+  .pictures {
+    max-width: 372px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .arrowButton {
+    cursor: pointer;
+    border: 0;
+    background: none;
+    svg {
+      path {
+        fill: #000000;
+      }
+    }
+  }
+  .disableButton {
+    border: 0;
+    background: none;
+    svg {
+      path {
+        fill: $TITLE_ACTIVE_5;
+      }
+    }
+  }
+  .next {
+    transform: rotate(180deg);
+  }
+  .item {
+    cursor: pointer;
+    width: 119px;
+    height: 118px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: #ffffff;
+    .image {
+      position: relative;
+      width: 113px;
+      height: 81.91px;
+
+      span {
+        position: static !important;
+      }
+    }
+  }
+}
+.activeItem {
+  border: 1px solid $PRIMARY_BLUE;
 }

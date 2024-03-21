@@ -1,0 +1,40 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.details {
+  padding-bottom: 30px;
+  border-bottom: 1px solid $DARK_GREY;
+  .productName {
+    @extend .bold-32;
+    margin-bottom: 24px;
+  }
+}
+
+.characterics {
+  margin-bottom: 16px;
+  .item {
+    display: flex;
+    justify-content: space-between;
+    @extend .medium-16;
+    margin-bottom: 12px;
+    .charName {
+      color: $TITLE_ACTIVE_5;
+    }
+    .charValue {
+      font-weight: 400;
+    }
+  }
+}
+.description {
+  .title {
+    @extend .bold-20;
+    margin-bottom: 7px;
+  }
+  .text {
+    @extend .regular-16;
+    margin-bottom: 12px;
+  }
+}

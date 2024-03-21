@@ -7,11 +7,10 @@ import styles from './TextField.module.scss';
 export const TextField = React.forwardRef(
   (
     {
+      buttonTitle,
       onChangeText,
       iconLeft,
       label,
-      buttonTitle,
-      buttonClick,
       withError,
       errors,
       className,
@@ -49,9 +48,6 @@ export const TextField = React.forwardRef(
               {buttonTitle}
             </button>
           ) : null}
-          {/* <button className={clsx(styles.arrowIcon)}>
-            <ArrowIcon />
-          </button> */}
         </div>
       </div>
     );

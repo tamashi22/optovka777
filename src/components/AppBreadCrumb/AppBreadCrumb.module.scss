@@ -26,3 +26,7 @@
   @extend .medium-14;
   color: $TITLE_ACTIVE_7;
 }
+.item {
+  display: flex;
+  align-items: center;
+}

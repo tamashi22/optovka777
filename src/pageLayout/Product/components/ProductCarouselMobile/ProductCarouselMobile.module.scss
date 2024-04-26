@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 20px;
+  position: relative;
+  @media screen and (max-width: $MOBILE_SIZE) {
+    height: 350px;
+  }
+}
+.swiper {
+  height: 100%;
+}
+.image {
+  border-radius: 40px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  img {
+    border-radius: 40px;
+    overflow: hidden;
+  }
+}
+.counter {
+  width: 40px;
+  border-radius: 100px;
+  background: $PRIMARY_GREY;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  z-index: 999;
+}

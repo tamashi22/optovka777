@@ -1,0 +1,25 @@
+.content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0px;
+  .count {
+    text-wrap: nowrap;
+  }
+}
+.filters {
+  display: flex;
+  gap: 16px;
+  .categoryFilter {
+    width: 260px;
+    @media screen and (max-width: $TABLET_SIZE) {
+      display: none;
+    }
+  }
+  .orderFiler {
+    width: 250px;
+  }
+  .priceFilter {
+    width: 200px;
+  }
+}

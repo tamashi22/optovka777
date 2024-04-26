@@ -1,0 +1,11 @@
+.count {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $LIGHT_BLUE;
+  border-radius: 100px;
+  color: white;
+  @extend .medium-14;
+}

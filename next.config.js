@@ -5,7 +5,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: ['./src'],
     prependData: `
-      @import "~@/styles/common/temp.scss";`,
+        @import "~@/styles/common/temp.scss";`,
   },
   webpack(config) {
     config.module.rules.push({
@@ -34,6 +34,17 @@ const nextConfig = {
       ],
     });
     return config;
+  },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'online-store-kv77.onrender.com',
+        port: '',
+        pathname: '/online-store/image/**',
+      },
+    ],
   },
 };
 

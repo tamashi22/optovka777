@@ -7,7 +7,7 @@ import Arrow from '@/assets/icons/nextIcon.svg';
 import Partner1 from '@/assets/images/partner1.png';
 import styles from './HomePartners.module.scss';
 
-const HomePartners = () => {
+const HomePartners = ({ partners }) => {
   const [swiper, setSwiper] = React.useState();
   const [isAtStart, setIsAtStart] = React.useState(true);
   const [isAtEnd, setIsAtEnd] = React.useState(false);
@@ -32,11 +32,17 @@ const HomePartners = () => {
           slidesPerView="auto"
           spaceBetween={15}
         >
-          {new Array(6).fill(0).map((item, index) => (
+          {partners.map((item, index) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <div className={styles.item}>
                 <div className={styles.image}>
-                  <Image src={Partner1} alt="parner" objectFit="contain" />
+                  <Image
+                    src={item.image_path}
+                    alt="parner"
+                    objectFit="contain"
+                    width={150}
+                    height={150}
+                  />
                 </div>
               </div>
             </SwiperSlide>

@@ -1,12 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import AuthWrapper from './components/AuthWrapper';
 import { TextFieldPhone } from '@/components/ui/TextFieldPhone';
 import { AppButton } from '@/components/ui/AppButton';
 import { SmsCode } from '@/components/ui/SmsCode';
+import { AuthApi } from '@/services/api/AuthApi';
 import styles from './AuthLayout.module.scss';
+import { parseCookies, setCookie, destroyCookie } from 'nookies';
 const SMS_CODE_LENGTH = 6;
 const AuthLayout = () => {
+  const router = useRouter();
   const [tab, setTab] = React.useState('phone');
   const [phoneData, setPhoneData] = React.useState({
     phone: '',
@@ -16,29 +20,28 @@ const AuthLayout = () => {
 
   const [checked, setChecked] = React.useState(false);
   const [code, setCode] = React.useState('');
+  const [sessionId, SetSessonId] = React.useState();
   const [minutes, setMinutes] = React.useState(1);
   const [seconds, setSeconds] = React.useState(0);
   const onChangePhone = data => {
     setPhoneData(data);
   };
   const onSendCode = () => {
-    // UserApi.sendCode(phoneData.formattedPhone)
-    //   .then(() => {
-    //     //setTab("sms");
-    //   })
-    //   .finally(() => {
-    //     setDisabled(false);
-    //   });
-    console.log('phone', phoneData);
     if (phoneData.isValid && checked) {
-      setTab('sms');
+      AuthApi.sendCode(phoneData.formattedPhone).then(res => {
+        SetSessonId(res.data.data.session_id);
+        setTab('sms');
+      });
     }
   };
   const handleСheck = () => {
     setChecked(!checked);
   };
   const onLogin = () => {
-    console.log('code', code);
+    AuthApi.verify({ session_id: sessionId, code: code }).then(() => {
+      
+      router.push('/');
+    });
   };
   const resendCode = () => {
     setMinutes(1);

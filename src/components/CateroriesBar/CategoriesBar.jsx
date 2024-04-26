@@ -1,44 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import Close from '@/assets/icons/close.svg';
-import ForCafe from '@/assets/icons/category1.svg';
-
+import { ROUTER_NAMES } from '@/router/RouterNames';
 import styles from './CategoriesBar.module.scss';
-const CategoriesBar = ({ onClose }) => {
-  const [current, setCurrent] = React.useState(null);
-  console.log(current);
-  const SelectItem = (event, id) => {
-    setCurrent(id);
-  };
 
+const CategoriesBar = ({ onClose, items }) => {
+  const router = useRouter();
+  const [current, setCurrent] = useState(null);
+
+  const SelectItem = (event, item) => {
+    setCurrent(item);
+  };
+  useEffect(() => {
+    const closeBar = () => {
+      onClose();
+      setCurrent(null);
+    };
+    router.events.on('routeChangeStart', closeBar);
+    return () => {
+      router.events.off('routeChangeStart', closeBar);
+    };
+  }, [router.events, onClose]);
   return (
     <div className={styles.container}>
       <div className={styles.sideBar}>
         <div className={styles.categoriesWrapper}>
-          {new Array(4).fill(0).map((item, index) => (
+          {items?.map((item, index) => (
             <div
               className={clsx(
                 styles.itemWrapper,
-                current == index && styles.itemWrapperActive,
+                current?.id == item.id && styles.itemWrapperActive,
               )}
               key={index}
-              onMouseEnter={e => SelectItem(e, index)}
+              onMouseEnter={e => SelectItem(e, item)}
             >
-              <ForCafe />
-              <span className={styles.categoryName}>Для кафе и ресторанов</span>
+              <span
+                className={styles.categoryIcon}
+                dangerouslySetInnerHTML={{ __html: item.icon_svg }}
+              />
+              <span className={styles.categoryName}>{item.name}</span>
             </div>
           ))}
         </div>
-        {current && (
+        {current?.subcategories && current.subcategories.length > 0 && (
           <div className={styles.subCategories}>
-            <h3 className={styles.title}>Для кафе и ресторанов</h3>
-            <Link href="#">
-              <div className={styles.subCategoryName}>Канцелярские товары</div>
-            </Link>
-            <Link href="#">
-              <div className={styles.subCategoryName}>Бумажная продукция</div>
-            </Link>
+            <h3 className={styles.title}>{current.name}</h3>
+            {current.subcategories.map(sub => (
+              <Link href={ROUTER_NAMES.CATALOG + '/' + sub.slug} key={sub.slug}>
+                <div className={styles.subCategoryName}>{sub.name}</div>
+              </Link>
+            ))}
           </div>
         )}
       </div>

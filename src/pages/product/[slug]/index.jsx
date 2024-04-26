@@ -8,6 +8,7 @@ const Product = () => {
   return (
     <AppLayout>
       <ProductLayout />
+      
     </AppLayout>
   );
 };

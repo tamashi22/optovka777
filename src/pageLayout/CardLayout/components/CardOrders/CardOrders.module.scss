@@ -1,0 +1,100 @@
+.wrapper {
+  background: $PRIMARY_GREY;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.content {
+  display: flex;
+  max-width: 500px;
+  width: 100%;
+}
+.image {
+  position: relative;
+  width: 124px;
+  height: 136px;
+
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  @media screen and (max-width: $TABLET_SIZE) {
+    width: 90px;
+    height: 100px;
+  }
+}
+.productInfo {
+  margin-left: 20px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  .title {
+    @extend .bold-20;
+    @media screen and (max-width: $TABLET_SIZE) {
+    }
+  }
+  .price {
+    @extend .bold-24;
+    @media screen and (max-width: $TABLET_SIZE) {
+    }
+  }
+}
+.productDetails {
+  width: 380px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: $TABLET_SIZE) {
+    display: none;
+  }
+  .characteristics {
+    display: flex;
+
+    justify-content: space-between;
+    width: 100%;
+    @extend .regular-16;
+    .characteristic {
+      color: $TITLE_ACTIVE_5;
+    }
+    .value {
+      color: $TITLE_ACTIVE_1;
+    }
+  }
+}
+.buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  .actionButton {
+    width: 24px;
+    height: 24px;
+    border: 0;
+    background: none;
+  }
+  .count {
+    max-width: 124px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    display: flex;
+
+    .countInput {
+      border-radius: 4px;
+      border: 0;
+      text-align: center;
+      width: 26px;
+      height: 29px;
+      outline: none;
+      background: $PRIMARY_GREY;
+    }
+  }
+}

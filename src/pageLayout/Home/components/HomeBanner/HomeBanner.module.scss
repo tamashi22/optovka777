@@ -27,6 +27,7 @@
     justify-content: center;
     border-radius: 1000px;
     background-color: $DARK_GREY;
+
     @media screen and (max-width: $MOBILE_SIZE) {
       width: 36px;
       height: 36px;

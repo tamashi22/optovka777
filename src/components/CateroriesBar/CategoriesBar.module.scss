@@ -31,6 +31,13 @@
       @extend .medium-16;
       margin-left: 12px;
     }
+    .categoryIcon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   .itemWrapperActive {
     background-color: $LIGHT_BLUE;

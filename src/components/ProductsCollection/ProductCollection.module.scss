@@ -1,0 +1,22 @@
+.wrapper {
+  margin-top: 20px;
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 304px);
+  gap: 10px;
+  justify-content: center;
+  @media screen and (max-width: $TABLET_SIZE) {
+    grid-template-columns: repeat(2, 304px);
+    gap: 5px;
+    justify-content: space-between;
+    grid-row-gap: 10px;
+  }
+  @media screen and (max-width: $MOBILE_SIZE) {
+    justify-content: space-between;
+    grid-row-gap: 10px;
+    gap: 5px;
+    grid-template-columns: repeat(2, 167px);
+  }
+}

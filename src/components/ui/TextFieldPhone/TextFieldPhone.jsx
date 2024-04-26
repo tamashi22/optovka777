@@ -22,7 +22,6 @@ export const TextFieldPhone = ({ value, onChange }) => {
       alwaysShowMask
       mask="+996 (111) 11 11 11"
       value={value}
-      //@ts-ignore
       onChange={onChangeText}
     >
       {inputProps => <TextField {...inputProps} />}

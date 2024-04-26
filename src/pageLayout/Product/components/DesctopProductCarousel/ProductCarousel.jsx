@@ -61,7 +61,7 @@ const ProductCarousel = () => {
                   onClick={() => setCurrentSlide(item)}
                 >
                   <div className={styles.image}>
-                    <Image
+                    <AppImage
                       src={item.picture}
                       alt={item.id}
                       objectFit="contain"

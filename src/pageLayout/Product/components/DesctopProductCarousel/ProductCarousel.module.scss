@@ -22,6 +22,9 @@
   align-items: center;
   justify-content: space-between;
 
+  .swiper {
+    max-height: 118px;
+  }
   .swiperSlide {
     width: auto;
   }

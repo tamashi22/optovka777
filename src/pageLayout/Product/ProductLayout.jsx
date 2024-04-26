@@ -2,11 +2,13 @@ import React from 'react';
 import clsx from 'clsx';
 import { observer } from 'mobx-react-lite';
 import { AppBreadCrumb } from '@/components/AppBreadCrumb';
-
+import { ProductCarousel } from './components/DesctopProductCarousel';
+import { ProductDetails } from './components/ProductDetails';
 import { store } from '@/store';
 import styles from './ProductLayout.module.scss';
-import { ProductCarousel } from './components/ProductCarousel';
-import { ProductDetails } from './components/ProductDetails';
+import { ProductPriceMobile } from './components/ProductPriceMobile';
+import { ProductCarouselMobile } from './components/ProductCarouselMobile';
+
 const ProductLayout = observer(() => {
   const { devicesStore } = store;
   const crumbItems = [
@@ -28,10 +30,15 @@ const ProductLayout = observer(() => {
       {!devicesStore.isMobile && <AppBreadCrumb items={crumbItems} />}
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <ProductCarousel />
+          {!devicesStore.isMobile ? (
+            <ProductCarousel />
+          ) : (
+            <ProductCarouselMobile />
+          )}
           <ProductDetails />
         </div>
       </div>
+      {devicesStore.isMobile && <ProductPriceMobile />}
     </div>
   );
 });

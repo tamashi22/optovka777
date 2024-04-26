@@ -1,10 +1,19 @@
 import Head from 'next/head';
 import React from 'react';
 import { observer } from 'mobx-react-lite';
+import NProgress from 'nprogress';
+import Router from 'next/router';
 import { store } from '@/store';
 import { RootStoreProvider } from '@/providers/RootStoreProvider';
 import '@/styles/globals.scss';
 import { AppTapBar } from '@/components/AppTapBar';
+
+NProgress.configure({ showSpinner: false });
+Router.events.on('routeChangeStart', url => {
+  NProgress.start();
+});
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 const App = observer(({ Component, pageProps }) => {
   const MOBILE_WIDTH = 768;

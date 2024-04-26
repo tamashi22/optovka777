@@ -8,9 +8,10 @@ import styles from './HomeBanner.module.scss';
 import Banner from '@/assets/images/banner.jpg';
 import Arrow from '@/assets/icons/arrow32.svg';
 import Link from 'next/link';
-const HomeBanner = () => {
+const HomeBanner = ({ banners }) => {
   const [swiper, setSwiper] = React.useState();
   const [currentNumber, setCurrentNumber] = React.useState(1);
+
   return (
     <>
       <div className={styles.container}>
@@ -30,7 +31,7 @@ const HomeBanner = () => {
             speed={300}
             loop
           >
-            {new Array(3).fill(0).map((item, index) => (
+            {banners.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className={styles.banner}>
                   <Link href="#">
@@ -39,7 +40,8 @@ const HomeBanner = () => {
                       layout="responsive"
                       width={1200}
                       height={500}
-                      src={Banner}
+                      priority={true}
+                      src={item.image_path}
                       alt="banner"
                     />
                   </Link>
@@ -71,7 +73,7 @@ const HomeBanner = () => {
               className={clsx(
                 styles.swiperPaginationBullet,
                 currentNumber === index + 1 &&
-                  styles.swiperPaginationBulletActive,
+                  styles.swiperPaginaxtionBulletActive,
               )}
               onClick={() => {
                 swiper.slideTo(index);

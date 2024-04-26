@@ -10,14 +10,25 @@
   align-items: center;
   justify-content: space-evenly;
 
+  box-shadow:
+    0 -2px 4px 0 rgba(0, 0, 0, 0.08),
+    0 0 6px 0 rgba(0, 0, 0, 0.02);
+
   .linkTap {
     position: relative;
-    // svg {
-    //   path {
-    //     fill: blue;
-    //   }
-    // }
   }
+}
+.activeLink {
+  svg {
+    path {
+      fill: $LIGHT_BLUE ;
+    }
+  }
+}
+.tapButton {
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
 .count {
   position: absolute;

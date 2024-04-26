@@ -1,7 +1,9 @@
 import React from 'react';
 import { ProductPrice } from '../ProductPrice';
+import { store } from '@/store';
 import styles from './ProductDetails.module.scss';
 export const ProductDetails = () => {
+  const { devicesStore } = store;
   return (
     <div className={styles.wrapper}>
       <div className={styles.details}>
@@ -31,7 +33,7 @@ export const ProductDetails = () => {
           <p className={styles.text}>Пластик, полиэтилен.</p>
         </div>
       </div>
-      <ProductPrice />
+      {!devicesStore.isMobile &&   <ProductPrice />}
     </div>
   );
 };

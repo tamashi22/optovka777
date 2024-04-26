@@ -5,11 +5,14 @@ import { Autoplay, Controller, Pagination } from 'swiper/modules';
 import clsx from 'clsx';
 import { ProductCard } from '@/components/ProductCard';
 import Arrow from '@/assets/icons/nextIcon.svg';
-import styles from './HomeCards.module.scss';
-const HomeCards = ({ title, link }) => {
+import { store } from '@/store';
+import styles from './ProductCarousel.module.scss';
+const ProductCarousel = ({ title, products }) => {
+  const { devicesStore } = store;
   const [swiper, setSwiper] = React.useState();
   const [isAtStart, setIsAtStart] = React.useState(true);
   const [isAtEnd, setIsAtEnd] = React.useState(false);
+
   React.useEffect(() => {
     if (swiper) {
       swiper.on('reachBeginning', () => setIsAtStart(true));
@@ -34,32 +37,38 @@ const HomeCards = ({ title, link }) => {
         className={styles.swiper}
         onSwiper={setSwiper}
         slidesPerView="auto"
-        spaceBetween={18}
+        spaceBetween={devicesStore.isMobile ? 10 : 18}
       >
-        {new Array(6).fill(0).map((item, index) => (
+        {products.map((item, index) => (
           <SwiperSlide key={index} className={styles.swiperSlide}>
-            <ProductCard />
+            
+              <ProductCard product={item} />
+          
           </SwiperSlide>
         ))}
       </Swiper>
-      {!isAtEnd && (
-        <button
-          className={clsx(styles.arrowButton, styles.next)}
-          onClick={() => swiper?.slideNext()}
-        >
-          <Arrow />
-        </button>
-      )}
-      {!isAtStart && (
-        <button
-          className={clsx(styles.arrowButton, styles.prev)}
-          onClick={() => swiper?.slidePrev()}
-        >
-          <Arrow />
-        </button>
+      {!devicesStore.isMobile && (
+        <>
+          {!isAtEnd && (
+            <button
+              className={clsx(styles.arrowButton, styles.next)}
+              onClick={() => swiper?.slideNext()}
+            >
+              <Arrow />
+            </button>
+          )}
+          {!isAtStart && (
+            <button
+              className={clsx(styles.arrowButton, styles.prev)}
+              onClick={() => swiper?.slidePrev()}
+            >
+              <Arrow />
+            </button>
+          )}
+        </>
       )}
     </div>
   );
 };
 
-export default HomeCards;
+export default ProductCarousel;

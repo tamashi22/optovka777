@@ -11,6 +11,9 @@
     @extend .bold-32;
     margin-bottom: 24px;
   }
+  @media screen and (max-width: $TABLET_SIZE) {
+    border: 0;
+  }
 }
 
 .characterics {

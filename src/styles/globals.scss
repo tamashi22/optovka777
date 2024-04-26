@@ -4,11 +4,13 @@
 @import 'swiper/css/pagination';
 @import 'swiper/css/autoplay';
 @import 'swiper/css/scrollbar';
+@import 'nprogress.scss';
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: Gilroy;
+  min-width: 320px;
 }
 a {
   color: inherit;
@@ -24,4 +26,8 @@ a {
   padding: 0px 20px;
   margin: 0 auto;
   position: relative;
+}
+.grey {
+  background: $GREY;
+  padding: 10px 0px;
 }
